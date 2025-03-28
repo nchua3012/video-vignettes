@@ -1,10 +1,16 @@
 import React from "react";
+import MixImages1 from "../components/mix-images";
 
 function Projects() {
   return (
     <div style={style.container}>
       <div style={style.contentsection}>
-        <p>Projects</p>
+        <MixImages1 
+          largeImageSrc=""
+          smallImageSrc1=""
+          smallImageSrc2=""
+          alt="WIP"
+        />
       </div>
     </div>
   );
