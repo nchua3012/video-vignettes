@@ -13,7 +13,7 @@ function Body() {
       height: "60vh",
       marginTop: "10vh",        
       padding: "20px",          
-      textAlign: "center",    
+        
         
     }
   }

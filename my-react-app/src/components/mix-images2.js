@@ -1,6 +1,6 @@
 import React from "react";
 
-function MixImages1({ largeImageSrc, smallImageSrc1, smallImageSrc2, alt }) {
+function MixImages2({ largeImageSrc, smallImageSrc1, smallImageSrc2, alt }) {
     return (
         <div style={styles.imageContainer}>
             <img src={largeImageSrc} alt={alt} style={styles.largeImage} />
@@ -34,16 +34,17 @@ const styles = {
 
     largeImage: {
         flex: 2,
-        height: "auto",
-        maxWidth:"800px",
+        width: "auto", 
+        height: "100%",
+        maxHeight:"800px",
         objectFit: "cover",
     },
 
     smallImage: {
-        width: "400px",
-        height: "auto",
+        width: "auto",
+        height: "400px",
         objectFit: "cover",
     },
 };
 
-export default MixImages1;
+export default MixImages2;
