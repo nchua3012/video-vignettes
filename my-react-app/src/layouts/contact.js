@@ -1,34 +1,44 @@
 import React from "react";
+import ImageTextLayout2 from "../components/imageleft-textright";
 
 function Contact() {
+
+  const textContent = {
+    heading: "Get in touch",
+    paragraph: "This is the contact page.",
+  };
+
   return (
     <div style={style.container}>
       <div style={style.contentsection}>
-        <p>Contact</p>
+        <ImageTextLayout2 
+          text={textContent} 
+          src="https://placehold.co/800x800"
+          alt="Placeholder Image"
+        />
       </div>
     </div>
   );
 }
 
 const style = {
-  
-    container: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "80vh", 
-        paddingTop:"10vh",
-      },
-  
+  container: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "80vh", 
+    paddingTop: "10vh",
+  },
   contentsection: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "80%", 
+    width: "60%",
     height: "60vh",
     padding: "20px",
-    textAlign: "center",
+    textAlign: "left",
   }
 };
 
 export default Contact;
+

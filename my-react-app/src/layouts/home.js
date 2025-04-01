@@ -13,7 +13,7 @@ function Home() {
       <div style={style.contentsection}>
         <ImageTextLayout2 
           text={textContent} 
-          src="https://via.placeholder.com/400"
+          src="https://placehold.co/800x800"
           alt="Placeholder Image"
         />
       </div>
@@ -33,7 +33,7 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "80%",
+    width: "60%",
     height: "60vh",
     padding: "20px",
     textAlign: "left",

@@ -27,6 +27,7 @@ const styles = {
   textSection: {
     flex: 1,  
     paddingRight: "20px", 
+    textAlign: "left",
   },
   imageSection: {
     flex: 1,  
@@ -34,10 +35,10 @@ const styles = {
     justifyContent: "center",
   },
   image: {
-    width: "80%",
-    maxWidth: "400px",
+    width: "100%",
+    maxWidth: "800px",
     height: "auto",
-    borderRadius: "8px",
+
   },
   heading: {
     fontSize: "24px",

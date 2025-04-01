@@ -6,9 +6,9 @@ function Projects() {
     <div style={style.container}>
       <div style={style.contentsection}>
         <MixImages1 
-          largeImageSrc=""
-          smallImageSrc1=""
-          smallImageSrc2=""
+          largeImageSrc="https://placehold.co/1200x1200"
+          smallImageSrc1="https://placehold.co/400x400"
+          smallImageSrc2="https://placehold.co/400x400"
           alt="WIP"
         />
       </div>
@@ -30,10 +30,9 @@ const style = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    width: "80%", 
+    width: "60%", 
     height: "60vh",
     padding: "20px",
-    textAlign: "center",
   }
 };
 
