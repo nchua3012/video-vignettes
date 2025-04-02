@@ -16,10 +16,10 @@ function App() {
         <Topnavbar />
         <div className="content">
           <Routes>
-            <Route path="/" exact component={Home} />
-            <Route path="/about" component={AboutMe} />
-            <Route path="/projects" component={Projects} /> 
-            <Route path="/contact" component={Contact} />
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <Footer />
