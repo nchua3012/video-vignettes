@@ -1,6 +1,5 @@
-//This is the parent
-
-import React, {useState} from "react";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Topnavbar from "./components/topnavbar";
 import AboutMe from "./layouts/aboutme";
 import Contact from "./layouts/contact";
@@ -11,36 +10,21 @@ import './App.css';
 import './index.css';
 
 function App() {
-
-  const [currentSection, setCurrentSection] = useState("Home");
-
-  const handleButtonClick = (section) => {
-    setCurrentSection(section);
-  };
-
-  const renderSection = () => {
-    switch (currentSection) {
-      case "Home":
-        return <Home />;
-      case "About Me":
-        return <AboutMe />;
-      case "Projects":
-        return <Projects />;
-      case "Contact":
-        return <Contact />;
-      default:
-        return <Home />;
-    }
-  };
-
   return (
-    <div className="container">
-      <Topnavbar onButtonClick={handleButtonClick} />
-      <div className="content">
-        {renderSection()}
+    <Router>
+      <div className="container">
+        <Topnavbar />
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
