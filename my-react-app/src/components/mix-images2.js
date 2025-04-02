@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function MixImages2({ largeImageSrc, smallImageSrc1, smallImageSrc2, alt }) {
+function MixImages2({ largeImage, smallImageSrc1, smallImageSrc2, alt, interval = 3000 }) {
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(()=> {
+        const timer= setInterval(()=> {
+            setCurrentIndex((prevIndex)=> (prevIndex + 1) % largeImage.length);
+        }, interval);
+
+    return () => clearInterval(timer);
+}, [interval, largeImage.length]);
+
+
     return (
         <div style={styles.imageContainer}>
-            <img src={largeImageSrc} alt={alt} style={styles.largeImage} />
+            <img src={largeImage[currentIndex]} alt={alt} style={styles.largeImage} />
 
             
             <div style={styles.smallImageContainer}>
@@ -28,21 +40,20 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         gap: "20px",
-        maxHeight: "800px",
+        maxHeight: "720px",
         width: "auto",
     },
 
     largeImage: {
         flex: 2,
-        width: "auto", 
-        height: "100%",
-        maxHeight:"800px",
+        height: "auto",
+        maxWidth:"800px",
         objectFit: "cover",
     },
 
     smallImage: {
-        width: "auto",
-        height: "400px",
+        width: "400px",
+        height: "auto",
         objectFit: "cover",
     },
 };
