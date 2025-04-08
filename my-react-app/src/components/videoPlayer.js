@@ -31,11 +31,14 @@ function Videoplayer() {
     <div style={styles.videoContainer}>
       {videos.length > 0 ? (
         <video
-          controls
-          autoPlay
-          onEnded={handleEnded}
-          style={styles.video}
-        >
+
+        autoPlay
+        muted
+        playsInline
+        onEnded={handleEnded}
+        style={styles.video}
+    
+      >
           <source
             src={`${process.env.PUBLIC_URL}${videos[currentVideoIndex]}`}
             type="video/mp4"
@@ -57,11 +60,13 @@ const styles = {
       alignItems: "center",              
       height: "80vh",                   
       width: "100%",                     
-      padding: "20px",                   
+      padding: "20px",    
+      
     },
     video: {
       maxWidth: "60%",
-      height: "auto",                   
+      height: "auto",   
+                     
     }
   };
   
