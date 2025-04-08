@@ -5,7 +5,7 @@ function Videoplayer() {
   const [currentVideoIndex, setVideoIndex] = useState(0);
 
   useEffect(() => {
-    console.log("Fetching video data...");
+    console.log("Fetching video data");
 
     fetch("/Video/video.json")
       .then((res) => {
@@ -28,19 +28,19 @@ function Videoplayer() {
   };
 
   return (
-    <div>
+    <div style={styles.videoContainer}>
       {videos.length > 0 ? (
-        
         <video
           controls
           autoPlay
           onEnded={handleEnded}
-          style={{ maxWidth: "60%", height: "auto" }}
+          style={styles.video}
         >
           <source
             src={`${process.env.PUBLIC_URL}${videos[currentVideoIndex]}`}
             type="video/mp4"
-          />
+        />
+
         </video>
       ) : (
 
@@ -50,4 +50,19 @@ function Videoplayer() {
   );
 }
 
-export default Videoplayer;
+const styles = {
+    videoContainer: {
+      display: "flex",  
+      justifyContent: "center",         
+      alignItems: "center",              
+      height: "80vh",                   
+      width: "100%",                     
+      padding: "20px",                   
+    },
+    video: {
+      maxWidth: "60%",
+      height: "auto",                   
+    }
+  };
+  
+  export default Videoplayer;

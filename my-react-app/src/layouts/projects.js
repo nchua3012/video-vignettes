@@ -8,6 +8,7 @@ import image5 from "../Assets/square-image-5.png"
 import image6 from "../Assets/square-image-6.png"
 
 function Projects() {
+  console.log("projects page has loaded");
   return (
     <div style={style.container}>
       <div style={style.contentsection}>

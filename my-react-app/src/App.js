@@ -5,6 +5,7 @@ import AboutMe from "./layouts/aboutme";
 import Contact from "./layouts/contact";
 import Home from "./layouts/home";
 import Projects from "./layouts/projects";
+import VideoDisplay from "./layouts/video";
 import Footer from "./footer";
 import './App.css';
 import './index.css';
@@ -20,7 +21,7 @@ function App() {
             <Route path="/about" element={<AboutMe />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/video" element={<video />}/>
+            <Route path="/video" element={<VideoDisplay />}/>
           </Routes>
         </div>
         <Footer />
