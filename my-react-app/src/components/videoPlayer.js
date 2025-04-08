@@ -1,33 +1,68 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect } from "react";
 
 function Videoplayer() {
-    const[videos, setVideos] = useState([]);
-    const[currentVideoIndex, setVideoIndex] = useState(0);
-    const videoRef = useRef(null);
+  const [videos, setVideos] = useState([]);
+  const [currentVideoIndex, setVideoIndex] = useState(0);
 
-    useEffect(() => {
-        fetch("http://localhost:3000/videos")
-        .then(res => res.json())
-        .then(data => setVideos(data))
-        .catch(err => console.error("Error fetching video:", err));
-    }, []);
+  useEffect(() => {
+    console.log("Fetching video data");
 
-    useEffect(() => {
-        if (videoRef.current && videos.length > 0) {
-            videoRef.current.src = `http://localhost:3000${videos[currentVideoIndex]}`;
-            videoRef.current.play();
+    fetch("/Video/video.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch videos, please try again later.");
         }
-    }, [currentVideoIndex,videos]);
+        return res.json();
+      })
+      .then((data) => {
+        console.log("Videos fetched successfully:", data);
+        setVideos(data); 
+      })
+      .catch((err) => {
+        console.error("Error fetching video:", err); 
+      });
+  }, []);
 
-    return (
-        <div>
-            {videos.length > 0 ? (
-                <video ref={videoRef} controls autoPlay onEnded={() => setVideoIndex((prev) => (prev + 2) % videos.length)} />
-            ) : (
-                <p>Loading</p>
-            )}
-        </div>
-    );
+  const handleEnded = () => {
+    setVideoIndex((prevIndex) => (prevIndex + 1) % videos.length); 
+  };
+
+  return (
+    <div style={styles.videoContainer}>
+      {videos.length > 0 ? (
+        <video
+          controls
+          autoPlay
+          onEnded={handleEnded}
+          style={styles.video}
+        >
+          <source
+            src={`${process.env.PUBLIC_URL}${videos[currentVideoIndex]}`}
+            type="video/mp4"
+        />
+
+        </video>
+      ) : (
+
+        <p>Loading videos...</p>
+      )}
+    </div>
+  );
 }
 
-export default Videoplayer;
+const styles = {
+    videoContainer: {
+      display: "flex",  
+      justifyContent: "center",         
+      alignItems: "center",              
+      height: "80vh",                   
+      width: "100%",                     
+      padding: "20px",                   
+    },
+    video: {
+      maxWidth: "60%",
+      height: "auto",                   
+    }
+  };
+  
+  export default Videoplayer;
