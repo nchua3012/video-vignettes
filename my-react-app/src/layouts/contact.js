@@ -5,7 +5,7 @@ function Contact() {
 
   const textContent = {
     heading: "Get in touch",
-    paragraph: "This is the contact page.",
+    paragraph: "Interested in collaborating or have a project in mind. Let’s connect on LinkedIn to discuss your requirements!",
   };
 
   return (
