@@ -21,7 +21,6 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     width: "100%",
-    padding: "20px",
     marginBottom: "20px", 
   },
   textSection: {
