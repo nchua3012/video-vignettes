@@ -17,7 +17,8 @@ const style = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",  
-    padding: "20px",
+    paddingTop: "10vh"
+
   },
 };
 
