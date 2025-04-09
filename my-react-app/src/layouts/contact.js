@@ -27,7 +27,7 @@ const style = {
     justifyContent: "center",
     alignItems: "center",
     height: "80vh", 
-    paddingTop: "10vh",
+    paddingTop: "5vh"
   },
   contentsection: {
     display: "flex",

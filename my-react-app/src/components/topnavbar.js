@@ -9,7 +9,7 @@ function Topnavbar() {
     <header style={style.header}>
       <div style={style.navbar} className="navbar">
 
-        <Link to="/" style={style.link} className="button">Home</Link>
+        <Link to="/" style={style.link} className="button">Vignettes</Link>
 
         <div style={style.rightButtons}>
           <Link to="/about" style={style.link} className="button">About</Link>

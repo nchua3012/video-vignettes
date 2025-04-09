@@ -4,8 +4,8 @@ import ImageTextLayout1 from "../components/imageright-textleft";
 function AboutMe() {
 
     const textContent = {
-        heading: "About Me",
-        paragraph: "Software developer with a background in architecture. Seven years of experience leading large-scale (£100M+) projects. Skilled in collaborating with multidisciplinary teams, with expertise in data management and utilizing advanced systems to support strategic planning. Applying an architect's lens to technology allows me to consider how different systems fit together, creating intuitive and functional designs that meet users' needs."
+        heading: "About",
+        paragraph: "A curated series of short video clips that document moments of everyday life",
     };
 
   return (
@@ -28,7 +28,7 @@ const style = {
     justifyContent: "center",
     alignItems: "center",
     height: "80vh", 
-    paddingTop:"10vh",
+    paddingTop: "5vh"
   },
   
   contentsection: {
